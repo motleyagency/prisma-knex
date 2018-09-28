@@ -1,0 +1,34 @@
+version: '3'
+services:
+  prisma:
+    container_name: prisma-knex
+    image: prismagraphql/prisma:1.18
+    restart: always
+    ports:
+    - "4466:4466"
+    environment:
+      PRISMA_CONFIG: |
+        port: 4466
+        databases:
+          default:
+            connector: postgres
+            host: ${POSTGRES_HOST}
+            port: ${POSTGRES_PORT}
+            database: ${POSTGRES_DB}
+            schema: ${POSTGRES_SCHEMA}´
+            user: ${POSTGRES_USER}
+            password: ${POSTGRES_PASSWORD}
+            migrations: false
+            ssl: false
+  postgres:
+    container_name: prisma-knex-db
+    image: postgres:10.5
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres:/var/lib/postgresql/data
+volumes:
+  postgres:

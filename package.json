@@ -1,0 +1,13 @@
+{
+  "name": "prisma-knex",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/motleyagency/prisma-knex.git",
+  "author": "Valtteri Karesto <valtteri.karesto@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "knex": "^0.15.2",
+    "pg": "^7.4.3",
+    "prisma": "^1.17.1"
+  }
+}
