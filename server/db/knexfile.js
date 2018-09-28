@@ -12,17 +12,17 @@ const {
 
 module.exports = {
   development: {
-    client: 'pg',
+    client: 'postgresql',
     connection: {
       database: POSTGRES_DB,
       user: POSTGRES_USER,
       password: POSTGRES_PASSWORD,
-      host: POSTGRES_HOST,
+      host: 'localhost',
       port: POSTGRES_PORT,
     },
   },
   staging: {
-    client: 'pg',
+    client: 'postgresql',
     connection: {
       database: POSTGRES_DB,
       user: POSTGRES_USER,
@@ -32,7 +32,7 @@ module.exports = {
     },
   },
   production: {
-    client: 'pg',
+    client: 'postgresql',
     connection: {
       database: POSTGRES_DB,
       user: POSTGRES_USER,

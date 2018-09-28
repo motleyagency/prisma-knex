@@ -1,6 +1,6 @@
 const up = knex =>
   knex.raw(`
-    CREATE TABLE users (
+    CREATE TABLE user_table (
       id serial primary key,
       username text unique,
       email text unique,
@@ -13,7 +13,7 @@ const up = knex =>
 
 const down = knex =>
   knex.raw(`
-  DROP TABLE users;
+  DROP TABLE user;
 `);
 
 module.exports = {

@@ -16,7 +16,7 @@ TODO: Add configrations for the databases, make sure that migrations is set to f
 
 ## Creating migrations
 
-First we will create a migration with `knex make:migration`
+First we will create a migration file with `knex migrate:make`
 
 ```bash
 knex migrate:make --knexfile ./server/db create_user_table
